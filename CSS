@@ -1,0 +1,44 @@
+/* styles.css */
+
+/* Reset default margin and padding */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+/* Set up the two-column layout */
+.container {
+    display: flex;
+    justify-content: space-between;
+    max-width: 800px; /* Adjust as needed */
+    margin: 0 auto;
+    padding: 20px;
+}
+
+.left-column {
+    flex: 1;
+    padding-right: 20px;
+}
+
+.right-column {
+    flex: 1;
+    padding-left: 20px;
+}
+
+/* Style headings and paragraphs */
+h1, h2, p {
+    font-size: 16px;
+    margin-bottom: 10px;
+}
+
+ul {
+    list-style: none;
+}
+
+li a {
+    text-decoration: none;
+    color: #333;
+    display: block;
+    margin-bottom: 10px;
+}
