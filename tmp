@@ -1,0 +1,35 @@
+<br>
+
+<p style="margin-bottom:0">
+<b>Dynamic Coordination with Network Externalities: Procrastination Can Be Efficient</b></p>
+<details><summary>Abstract | <a href="https://deivisangeli.github.io/assets/pdfs/AngeliDynamicProcrastination.pdf" target="_blank">Paper</a></summary>
+<p style="margin-top:0.5em" align="justify">
+How does present bias affect welfare when agents want to coordinate over time? To answer that, I analyze a dynamic coordination model under quasi-hyperbolic discounting. I document a novel mechanism through which present bias can be adaptive, i.e., it can internalize the social cost of coordinating on a new action, say going from coordinating on using Twitter to using Threads. Agents migrating from Twitter to Threads ignore that their choice imposes negative externalities on those still using Twitter. So, to achieve efficiency, regular exponential discounters should ask for a higher relative quality of Threads before adopting it. In turn, present biased agents overvalue the externalities they currently receive from Twitter since externalities from Threads can only come in the future, after others adopt it. Hence, present bias leads agents to ask for more quality before migrating to Threads, preventing paths of inefficient coordination. Furthermore, small amounts of present bias always prevent society from taking inefficient paths. 
+</p>
+</details>
+
+<br>
+<br>
+
+### Work in Progress
+
+<p style="margin-bottom:0">
+<b>Female Pradhan Autonomy</b></p>
+<details><summary>Abstract</summary>
+<p style="margin-top:0.5em" align="justify">
+Abstract: Many countries have implemented electoral gender quotas to improve representation in public decision-making. At the same time, verifying whether such policies are successful -- and not just generating figureheads for male family members, for instance -- is hard, especially at the local level. I propose a novel and scalable measure of female leader autonomy for village leaders in India: whether the female leader owns the phone number used to communicate with higher levels of government. I then explore whether past quotas for females lead to more autonomy and whether autonomy predicts public policy outcomes.
+</p>
+</details>
+
+
+<br>
+
+<p style="margin-bottom:0">
+<b>Effects of Social Media Use on Scientific Production</b></p>
+<details><summary>Abstract</summary>
+<p style="margin-top:0.5em" align="justify">
+Abstract: How does social media use affect scientific productivity? While time spent on social media crowds out time spent writing, social media has the potential to connect researchers and generate debate from afar, which can be especially beneficial for minority researchers, and for interdisciplinary collaborations. This research project uses a differences-in-differences approach to explore the effect of joining Twitter on scientific productivity. The sample will include 28,000 research-active academics from top-150 US institutions with a Twitter account as of March 2022. I will estimate the causal effect of joining Twitter on the number and quality of publications, general citations, citations to papers published before joining Twitter, the geographic distance and disciplinary breadth of co-authorship networks, and horizontal and vertical job transitions. (Updated on 2023-12-13).
+</p>
+</details>
+
+
