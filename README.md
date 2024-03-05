@@ -1,4 +1,11 @@
-# Heading 1
-## Heading 2
+$ bundle init
+Writing new Gemfile to /app/Gemfile
 
-This is a practice run!
+$ cat Gemfile 
+# frozen_string_literal: true
+
+source "https://rubygems.org"
+
+git_source(:github) {|repo_name| "https://github.com/#{repo_name}" }
+
+# gem "rails"
