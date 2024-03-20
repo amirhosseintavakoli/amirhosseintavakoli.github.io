@@ -2,7 +2,7 @@
 layout: default
 ---
 
-My name is Amirhossein Tavakoli, and I am a PhD Candidate at the [UBC's Vancouver School of Economics](https://economics.ubc.ca/). My research interests are in Innovation, Public Economics, and Labor Economics. My current research project studies the impact of R&D tax credit on firms' growth, worker earnings, and innovation outputs.
+My name is Amirhossein Tavakoli, and I am a PhD Candidate at the [UBC's Vancouver School of Economics](https://economics.ubc.ca/). My research interests are in Innovation, Public Economics, and Labor Economics. My current research project studies the impact of an R&D tax credit on firms' growth, worker earnings, and innovation outputs.
 <br>
 <br>
 
