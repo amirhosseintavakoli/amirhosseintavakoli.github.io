@@ -25,6 +25,8 @@ This paper assesses how corporate M&As affect firms’ investment in long-term c
 </p>
 </details>
 
+<br>
+<br>
 ### Publications
 
 <p style="margin-bottom:0">
