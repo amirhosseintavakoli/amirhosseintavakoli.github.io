@@ -19,7 +19,7 @@ This paper connects changes in employer characteristics through job transitions 
 
 <p style="margin-bottom:0">
 <b>Corporate Acquisitions and Investment: Evidence from Europe?</b> with David Arnold and Terry Moon </p>
-<details><summary>Abstract | <a href="htassets/pdfs/CAI_draft.pdf" target="_blank">Paper</a></summary>
+<details><summary>Abstract | <a href="assets/pdfs/CAI_draft.pdf" target="_blank">Paper</a></summary>
 <p style="margin-top:0.5em" align="justify">
 This paper assesses how corporate M&As affect firms’ investment in long-term capital. Using financial data (2009 – 2018) for 10 European countries, we compare firms that went through M&As with similar non-M&A firms before and after the events. We find that acquirers significantly decreased their fixed assets after M&As and that the reduction was not driven by reallocation between merging parties or across different types of assets. Heterogeneity analyses based on industries reveal that the decline in investment was unlikely driven by the market power channel. Instead, acquirers appear to reduce long-term assets and increase debts to finance their acquisitions.
 </p>
