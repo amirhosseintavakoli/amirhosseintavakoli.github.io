@@ -10,7 +10,7 @@ My name is Amirhossein Tavakoli, and I am a PhD Candidate at the [UBC's Vancouve
 
 <p style="margin-bottom:0">
 <b>Job Transitions and Employee Earnings After Acquisitions: Linking Corporate and Worker Outcomes</b>, with David Arnold, Kevin Milligan, Terry Moon </p>
-<details><summary>Abstract | <a href="https://amirhosseintavakoli.github.io/assets/pdfs/MnA_Canada_20240319.pdf" target="_blank">Paper</a> </summary>
+<details><summary>Abstract | <a href="https://amirhosseintavakoli.github.io/assets/pdfs/MnA_Canada_draft.pdf" target="_blank">Paper</a> </summary>
 <p style="margin-top:0.5em" align="justify">
 This paper connects changes in employer characteristics through job transitions to employee earnings following mergers and acquisitions. Using firm balance sheet data linked to individual earnings data in Canada and a matched difference-in-differences design, we find that earnings of workers at target firms decrease after M&As, largely driven by those who move to other firms. Workers leaving targets move to larger and more profitable firms, but experience wage declines potentially due to a loss of firm-specific human capital or backloaded contracts. It appears that losses of match-specific premiums from job transitions primarily explain the post-M&A earnings decline in our setting.</p>
 </details>
