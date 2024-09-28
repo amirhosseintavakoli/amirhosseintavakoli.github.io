@@ -16,7 +16,7 @@ Innovative firms contribute to economic growth, create higher paying jobs, and h
 </details>
 
 <br>
-
+<br>
 ### Working Papers
 
 <p style="margin-bottom:0">
