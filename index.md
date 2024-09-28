@@ -17,6 +17,7 @@ Innovative firms contribute to economic growth, create higher paying jobs, and h
 
 <br>
 <br>
+
 ### Working Papers
 
 <p style="margin-bottom:0">
@@ -38,6 +39,7 @@ This paper assesses how corporate M&As affect firms’ investment in long-term c
 
 <br>
 <br>
+
 ### Publications
 
 <p style="margin-bottom:0">
