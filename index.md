@@ -15,6 +15,8 @@ My name is Amirhossein Tavakoli, and I am a PhD Candidate at the [UBC's Vancouve
 Innovative firms contribute to economic growth, create higher paying jobs, and hire disproportionately larger share of high-skill workers. I study how innovative firms change their worker composition when they increase their R\&D expenditure.</p>
 </details>
 
+<br>
+
 ### Working Papers
 
 <p style="margin-bottom:0">
