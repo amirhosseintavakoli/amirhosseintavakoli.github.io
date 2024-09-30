@@ -8,7 +8,7 @@ My name is Amirhossein Tavakoli, and I am a PhD Candidate at the [UBC's Vancouve
 ### Job Market Paper
 
 <p style="margin-bottom:0">
-<b>Innovative Firms and Skill-Biased Technological Change: Evidence from an R&D Tax Credits</b> </p>
+<b>Innovative Firms and Skill-Biased Technological Change: Evidence from an R&D Tax Credit</b> </p>
 <details><summary>Abstract | <a href="https://amirhosseintavakoli.github.io/assets/pdfs/tavakoli_jmp.pdf" target="_blank">Paper</a> </summary>
 <p style="margin-top:0.5em" align="justify">
 Innovative firms contribute to economic growth, create higher-paying jobs, and hire a disproportionately larger share of high-skill workers. I study how innovative firms change their worker composition when they increase their R&D expenditure.</p>
