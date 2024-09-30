@@ -23,13 +23,14 @@ Innovative firms contribute to economic growth, create higher-paying jobs, and h
 <b>Job Transitions and Employee Earnings After Acquisitions: Linking Corporate and Worker Outcomes</b>, with David Arnold, Kevin Milligan, Terry Moon </p>
 <details><summary>Abstract | <a href="https://amirhosseintavakoli.github.io/assets/pdfs/MnA_Canada_draft.pdf" target="_blank">Paper</a> </summary>
 <p style="margin-top:0.5em" align="justify">
-This paper connects changes in employer characteristics through job transitions to employee earnings following mergers and acquisitions. Using firm balance sheet data linked to individual earnings data in Canada and a matched difference-in-differences design, we find that earnings of workers at target firms decrease after M&As, largely driven by those who move to other firms. Workers leaving targets move to larger and more profitable firms, but experience wage declines potentially due to a loss of firm-specific human capital or backloaded contracts. It appears that losses of match-specific premiums from job transitions primarily explain the post-M&A earnings decline in our setting.</p>
+This paper connects changes in employer characteristics through job transitions to employee earnings following mergers and acquisitions. Using firm balance sheet data linked to individual earnings data in Canada and a matched difference-in-differences design, we find that earnings of workers at target firms decrease after M&As, largely driven by those who move to other firms. Workers leaving targets move to larger and more profitable firms, but experience wage declines potentially due to a loss of firm-specific human capital or backloaded contracts. It appears that losses of match-specific premiums from job transitions primarily explain the post-M&A earnings decline in our setting.
+</p>
 </details>
 
 <br>
 
 <p style="margin-bottom:0">
-<b>Corporate Acquisitions and Investment: Evidence from Europe?</b> with David Arnold and Terry Moon </p>
+<b>Corporate Acquisitions and Investment: Evidence from Europe</b> with David Arnold and Terry Moon </p>
 <details><summary>Abstract | <a href="https://amirhosseintavakoli.github.io/assets/pdfs/CAI_draft.pdf" target="_blank">Paper</a></summary>
 <p style="margin-top:0.5em" align="justify">
 This paper assesses how corporate M&As affect firms’ investment in long-term capital. Using financial data (2009 – 2018) for 10 European countries, we compare firms that went through M&As with similar non-M&A firms before and after the events. We find that acquirers significantly decreased their fixed assets after M&As and that the reduction was not driven by reallocation between merging parties or across different types of assets. Heterogeneity analyses based on industries reveal that the decline in investment was unlikely driven by the market power channel. Instead, acquirers appear to reduce long-term assets and increase debts to finance their acquisitions.
