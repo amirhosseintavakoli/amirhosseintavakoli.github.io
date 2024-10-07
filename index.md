@@ -7,8 +7,6 @@ My name is Amirhossein Tavakoli, and I am a PhD Candidate at the [UBC's Vancouve
 
 #### I am available for interviews in the 2024-2025 job market.
 
-<br>
-<br>
 
 ### Job Market Paper
 
