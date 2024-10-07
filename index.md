@@ -3,6 +3,11 @@ layout: default
 ---
 
 My name is Amirhossein Tavakoli, and I am a PhD Candidate at the [UBC's Vancouver School of Economics](https://economics.ubc.ca/). My research interests are in Innovation, Public Economics, and Labor Economics. In my job market paper, I study Skilled-biased technological change at innovative firms exploiting an R&D tax credit in Canada.<br>
+<be>
+
+**I am available for interviews in the 2024-2025 job market.**
+
+<br>
 <br>
 
 ### Job Market Paper
