@@ -12,7 +12,7 @@ My name is Amirhossein Tavakoli, and I am a PhD Candidate at the [UBC's Vancouve
 ### Job Market Paper
 
 <p style="margin-bottom:0">
-<b>R&D Expenditures, Rents, and Wage Inequality: Evidence from an R&D Tax Credit</b> </p>
+<b>R&D Expenditures, Productivity, and Wage Inequality: Evidence from an R&D Tax Credit</b> </p>
 <details><summary>Abstract | <a href="https://amirhosseintavakoli.github.io/assets/pdfs/tavakoli_jmp.pdf" target="_blank">Paper</a> </summary>
 <p style="margin-top:0.5em" align="justify">
 This paper examines the impact of R&D tax credits on firm-level and worker-level outcomes, using the Scientific Research and Experimental Development (SRED) tax credit in Canada. Leveraging a regression kink design and matched employer-employee tax records, I estimate a large and statistically significant increase on R&D expenditures. The results show that R&D-intensive firms respond to tax credits with substantial increases in R&D expenditures, leading to significant gains in profitability, surplus per worker, after-tax income per worker, and wages while non-R&D-intensive firms show minimal changes. These gains disproportionately benefit high-skill, older, and long-tenured workers, exacerbating wage inequality both between and within firms. High-skill workers experience the largest earnings gains, with a 10 percent increase in EL leading to a 1.6 percent rise in their earnings, while low-skill workers see no significant changes. These findings provide evidence of rent-sharing mechanisms and highlight the role of R&D tax credits in contributing to wage inequality. Robustness checks confirm the stability of the results across different model specifications.</p>
