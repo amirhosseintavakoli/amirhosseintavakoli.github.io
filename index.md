@@ -5,7 +5,7 @@ layout: default
 My name is Amirhossein Tavakoli, and I am a PhD Candidate at the [UBC's Vancouver School of Economics](https://economics.ubc.ca/profile/amirhossein-tavakoli-2/). My research interests are in Innovation, Public Economics, and Labor Economics. In my job market paper, I study the impact of R&D tax credits on firm performance and its implications for between-firm and within-firm wage inequality. <br>
 <br>
 
-#### I am available for interviews in the 2024-2025 job market.
+#### I will join Innovation, Science, and Economic Development (ISED) in May 2025 as an Economist (Intership).
 
 <br>
 
