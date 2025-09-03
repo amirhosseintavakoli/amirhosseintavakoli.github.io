@@ -25,7 +25,7 @@ This paper examines how R&D tax credits are passed onto wages and explores the u
 
 <p style="margin-bottom:0">
 <b>Job Transitions and Employee Earnings After Acquisitions: Linking Corporate and Worker Outcomes</b>, with David Arnold, Kevin Milligan, Terry Moon </p>
-<details><summary>Abstract | <a href="https://amirhosseintavakoli.github.io/assets/pdfs/MnA_Canada_draft.pdf" target="_blank">Paper</a> </summary>
+<details><summary>Abstract | <a href="https://static1.squarespace.com/static/5b87559c89c1726578ea2e57/t/68b8173b3b95c03a47dd586d/1756895035793/MnA_Canada_draft_revised.pdf" target="_blank">Paper</a> </summary>
 <p style="margin-top:0.5em" align="justify">
 This paper connects changes in employer characteristics through job transitions to employee earnings following mergers and acquisitions. Using firm balance sheet data linked to individual earnings data in Canada and a matched difference-in-differences design, we find that earnings of workers at target firms decrease after M&As, largely driven by those who move to other firms. Workers leaving targets move to larger and more profitable firms, but experience wage declines potentially due to a loss of firm-specific human capital or backloaded contracts. It appears that losses of match-specific premiums from job transitions primarily explain the post-M&A earnings decline in our setting.
 </p>
@@ -54,4 +54,5 @@ The price elasticity of gasoline demand is a key parameter in evaluating various
 </details>
 
 <br>
+
 
