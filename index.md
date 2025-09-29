@@ -2,10 +2,8 @@
 layout: default
 ---
 
-My name is Amirhossein Tavakoli, and I am a PhD Candidate at the [UBC's Vancouver School of Economics](https://economics.ubc.ca/profile/amirhossein-tavakoli-2/). My research interests are in Innovation, Public Economics, and Labor Economics. In my job market paper, I study the impact of R&D tax credits on firm performance and its implications for between-firm and within-firm wage inequality. <br>
+My name is Amirhossein Tavakoli, and I am an economist at Innovation, Science, and Economic Development (ISED) Canada. I hold a PhD in Economics from [UBC's Vancouver School of Economics](https://economics.ubc.ca/profile/amirhossein-tavakoli-2/). My research interests are in Innovation, Public Economics, and Labor Economics. My ongoing projects include the impact of government innovation policies such as Scientific Research and Experimental Development (SR&ED) and Business Innovation and Growth Support (BIGS) on firms' and workers' outcomes. Moreover, I am interested in the impact of corporate decisions such as mergers and acquisition on firms' innovation and worker labor market outcomes. <br>
 <br>
-
-#### I will join Innovation, Science, and Economic Development (ISED) in May 2025 as an Economist (Intership).
 
 <br>
 
@@ -54,5 +52,6 @@ The price elasticity of gasoline demand is a key parameter in evaluating various
 </details>
 
 <br>
+
 
 
