@@ -1,6 +1,6 @@
 ---
 title: A Journey of Not Writing
-layout: default
+layout: post
 ---
 
 # You Don't Begin at The Beginning
