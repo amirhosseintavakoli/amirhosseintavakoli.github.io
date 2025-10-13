@@ -1,10 +1,42 @@
-<small>{{ page.date | date: "%-d %B %Y" }}</small>
-<h1>{{ page.title }}</h1>
+<!DOCTYPE html>
+<html lang="{{ site.lang | default: "en-US" }}">
+  <head> 
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="google-site-verification" content="googlece98001a8f92cfcd.html" />
+    <meta name="description" content="Economist/Data Scientist at Vancouver School of Economics, University of British Columbia." />
+    <meta name="keywords" content="Amirhossein Tavakoli, Economics, Innovation, Public Economics, Labor Economics, Data Science, Vancouver School of Economics, VSE, University of British Columbia, UBC" />
+    <meta name="author" content="Amirhossein Tavakoli" />
+    
+    <meta property="og:title" content="Amirhossein Tavakoli" />
+    <meta property="og:description" content="Economist/Data Scientist at Vancouver School of Economics, University of British Columbia." />
+    <meta property="og:site_name" content="Amirhossein Tavakoli" />
 
-<p class="view">by {{ page.author | default: site.author }}</p>
 
-{{content}}
+{% seo %}
+    <link rel="stylesheet" href="{{ "/assets/css/style.css?v=" | append: site.github.build_revision | relative_url }}">
+    <!--[if lt IE 9]>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/html5shiv/3.7.3/html5shiv.min.js"></script>
+    <![endif]-->
+    {% include head-custom.html %}
+  </head>
+  <body>
+    <div class="wrapper">
+      <header>
+        <small>{{ page.date | date: "%-d %B %Y" }}</small>
+        <h1>{{ page.title }}</h1>
+        
+        <p class="view">by {{ page.author | default: site.author }}</p>
+        
+        {{content}}
+        
+        {% if page.tags %}
+          <small>tags: <em>{{ page.tags | join: "</em> - <em>" }}</em></small>
+        {% endif %}
+      </header>     
+    </div>
+    <script src="{{ "/assets/js/scale.fix.js" | relative_url }}"></script>
+  </body>
+</html>
 
-{% if page.tags %}
-  <small>tags: <em>{{ page.tags | join: "</em> - <em>" }}</em></small>
-{% endif %}
