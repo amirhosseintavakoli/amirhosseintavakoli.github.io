@@ -7,7 +7,7 @@ My name is Amirhossein Tavakoli, and I am an economist at Innovation, Science, a
 
 <br>
 
-### Job Market Paper
+### Working Papers
 
 <p style="margin-bottom:0">
 <b>R&D Expenditures, Productivity, and Rent-Sharing: Evidence from an R&D Tax Credit</b> </p>
@@ -16,13 +16,9 @@ My name is Amirhossein Tavakoli, and I am an economist at Innovation, Science, a
 This paper examines how R&D tax credits are passed onto wages and explores the underlying firm- and worker-level mechanism. Leveraging a regression kink design and matched employer-employee tax records, I find that R&D tax credits lead to a large and statistically significant increase in R&D expenditures. The results show that R&D-intensive firms respond to tax credits with substantial increases in R&D expenditures, leading to significant gains in profitability, productivity, and wages, while non-R&D-intensive firms show minimal changes. These firm-level gains are passed onto incumbent workers' earnings without impacting entrants. High-skilled, long-tenured, and older incumbents experience the most significant earnings gains, with a 10 percent increase in the tax credits leading to a 1.2 to 1.9 percent rise in their annual earnings. In contrast, low-skilled, low-tenured, and younger workers see no significant wage changes. These findings are consistent with a rent-sharing framework and highlight the role of R&D tax credits in contributing to within-firm wage inequality.</p>
 </details>
 
-<br>
-<br>
-
-### Working Papers
-
 <p style="margin-bottom:0">
 <b>Job Transitions and Employee Earnings After Acquisitions: Linking Corporate and Worker Outcomes</b>, with David Arnold, Kevin Milligan, Terry Moon </p>
+<p>Revision Requested at <b>Review of Economics and Statistics</b></p>
 <details><summary>Abstract | <a href="https://static1.squarespace.com/static/5b87559c89c1726578ea2e57/t/68b8173b3b95c03a47dd586d/1756895035793/MnA_Canada_draft_revised.pdf" target="_blank">Paper</a> </summary>
 <p style="margin-top:0.5em" align="justify">
 This paper connects changes in employer characteristics through job transitions to employee earnings following mergers and acquisitions. Using firm balance sheet data linked to individual earnings data in Canada and a matched difference-in-differences design, we find that earnings of workers at target firms decrease after M&As, largely driven by those who move to other firms. Workers leaving targets move to larger and more profitable firms, but experience wage declines potentially due to a loss of firm-specific human capital or backloaded contracts. It appears that losses of match-specific premiums from job transitions primarily explain the post-M&A earnings decline in our setting.
@@ -52,6 +48,7 @@ The price elasticity of gasoline demand is a key parameter in evaluating various
 </details>
 
 <br>
+
 
 
 
