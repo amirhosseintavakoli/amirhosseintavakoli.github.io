@@ -12,7 +12,7 @@ My name is Amirhossein Tavakoli, and I am an economist at Innovation, Science, a
 <p style="margin-bottom:0">
 <b>Job Transitions and Employee Earnings After Acquisitions: Linking Corporate and Worker Outcomes</b>, with David Arnold, Kevin Milligan, Terry Moon </p>
 <p>Conditionally Accepted at <b>Review of Economics and Statistics</b></p>
-<details><summary>Abstract | <a href="https://amirhosseintavakoli.github.io/assets/pdfs/MnA_Canada_draft_final.pdf" target="_blank">Paper</a> </summary>
+<details><summary>Abstract | <a href="https://amirhosseintavakoli.github.io/assets/pdfs/MnA_Canada_draft.pdf" target="_blank">Paper</a> </summary>
 <p style="margin-top:0.5em" align="justify">
 This paper connects changes in employer characteristics through job transitions to employee earnings following mergers and acquisitions. Using firm balance sheet data linked to individual earnings data in Canada and a matched difference-in-differences design, we find that earnings of workers at target firms decrease after M&As, largely driven by those who move to other firms. Workers leaving targets move to larger and more profitable firms, but experience wage declines. These decreased earnings are also concentrated among workers with longer tenure. These results are consistent with workers losing valuable match-specific premia after M&A-induced job transitions.
 </p>
@@ -49,6 +49,7 @@ The price elasticity of gasoline demand is a key parameter in evaluating various
 </details>
 
 <br>
+
 
 
 
