@@ -1,6 +1,6 @@
 <!DOCTYPE html>
 <html lang="{{ site.lang | default: "en-US" }}">
-  <head> 
+  <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1">
@@ -8,7 +8,7 @@
     <meta name="description" content="Economist/Data Scientist at Vancouver School of Economics, University of British Columbia." />
     <meta name="keywords" content="Amirhossein Tavakoli, Economics, Innovation, Public Economics, Labor Economics, Data Science, Vancouver School of Economics, VSE, University of British Columbia, UBC" />
     <meta name="author" content="Amirhossein Tavakoli" />
-    
+
     <meta property="og:title" content="Amirhossein Tavakoli" />
     <meta property="og:description" content="Economist/Data Scientist at Vancouver School of Economics, University of British Columbia." />
     <meta property="og:site_name" content="Amirhossein Tavakoli" />
@@ -17,26 +17,21 @@
 {% seo %}
     <link rel="stylesheet" href="{{ "/assets/css/style.css?v=" | append: site.github.build_revision | relative_url }}">
     {% include head-custom.html %}
+    <style>
+      .wrapper { width: 100%; max-width: 100%; margin: 0; padding: 0; }
+      .wrapper section { float: none !important; width: 100% !important; border: none !important; padding: 0 !important; margin: 0 !important; }
+    </style>
   </head>
   <body>
     <div class="wrapper">
-      <header>
-        <nav class="navbar navbar-expand-xl navbar-light fixed-top navbar-custom top-nav-regular">
-          <ul class="nav-links">
-            <a href="{{ "/" | absolute_url }}">Home</a>
-          </ul>
-        </nav>
-        <h1>{{ page.title }}</h1>
-        <small>{{ page.date | date: "%-d %B %Y" }}</small>
-        
-        <p class="view">
-          {{content}}
-        </p>
-        
-        {% if page.tags %}
-          <small>tags: <em>{{ page.tags | join: "</em> - <em>" }}</em></small>
-        {% endif %}
-      </header>     
+      <nav class="navbar navbar-expand-xl navbar-light fixed-top navbar-custom top-nav-regular">
+        <ul class="nav-links">
+          <a href="{{ "/" | absolute_url }}">Home</a>
+        </ul>
+      </nav>
+      <section>
+        {{ content }}
+      </section>
     </div>
     <script src="{{ "/assets/js/scale.fix.js" | relative_url }}"></script>
   </body>
