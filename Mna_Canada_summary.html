@@ -467,7 +467,7 @@ title: "M&A Paper Summary"
     <!-- First button has class "active" — this is the default visible panel on load -->
     <button class="topic-btn active" onclick="setTopic('trends')">
       <span class="topic-num">Topic 01</span>
-      M&amp;A Activity in Canada
+      M&A Activity in Canada
     </button>
     <button class="topic-btn" onclick="setTopic('firms')">
       <span class="topic-num">Topic 02</span>
@@ -475,7 +475,7 @@ title: "M&A Paper Summary"
     </button>
     <button class="topic-btn" onclick="setTopic('workers')">
       <span class="topic-num">Topic 03</span>
-      Worker Earnings After M&amp;As
+      Worker Earnings After M&As
     </button>
     <button class="topic-btn" onclick="setTopic('movers')">
       <span class="topic-num">Topic 04</span>
@@ -513,7 +513,7 @@ title: "M&A Paper Summary"
       <!-- topic-hook: one sentence that frames the question for the reader -->
       <div class="topic-header">
         <div class="topic-eyebrow">Topic 01 — Setting the Stage</div>
-        <h2 class="topic-title">M&amp;A Activity in Canada</h2>
+        <h2 class="topic-title">M&A Activity in Canada</h2>
         <p class="topic-hook">How many deals are we talking about, and how do we identify which firms and workers to study?</p>
       </div>
 
@@ -531,14 +531,14 @@ title: "M&A Paper Summary"
       <div class="explanation-block active" id="trends-plain">
         <div class="explanation-text">
           <p>Canada sees around <strong>750 merger and acquisition deals per year</strong> among the firms in our data. Think of these as moments when one company buys or absorbs another. We follow these deals from 2005 to 2017.</p>
-          <p>To figure out whether M&amp;As actually cause changes (rather than just happening at companies that were already changing), we find a "twin" for each M&amp;A firm — a similar company that never went through a deal. Comparing the two tells us what the deal itself did.</p>
+          <p>To figure out whether M&As actually cause changes (rather than just happening at companies that were already changing), we find a "twin" for each M&A firm — a similar company that never went through a deal. Comparing the two tells us what the deal itself did.</p>
         </div>
       </div>
 
       <!-- Second explanation-block is hidden until "For Economists" tab is clicked -->
       <div class="explanation-block" id="trends-econ">
         <div class="explanation-text">
-          <p>Our sample covers M&amp;A events from the SDC Platinum database matched to the Canadian Employer-Employee Dynamics Database (CEEDD), which links corporate T2 tax records to individual T1 and T4 filings. The match rate is ~75%, yielding ~420 matched deals per year from a pool of ~750 eligible events.</p>
+          <p>Our sample covers M&A events from the SDC Platinum database matched to the Canadian Employer-Employee Dynamics Database (CEEDD), which links corporate T2 tax records to individual T1 and T4 filings. The match rate is ~75%, yielding ~420 matched deals per year from a pool of ~750 eligible events.</p>
           <p>We implement a matched difference-in-differences design. Control firms are selected via propensity score matching on total revenue, average payrolls, and firm age, exactly within 2-digit NAICS sector, province, and year. ~80% of events are acquisitions (target continues as a separate entity); the remainder are mergers (full integration). We analyze targets and acquirers separately for acquisitions and aggregate for mergers.</p>
         </div>
       </div>
@@ -551,7 +551,7 @@ title: "M&A Paper Summary"
       <div class="stat-row">
         <div class="stat-card highlight">  <!-- "highlight" = accent-colored value -->
           <div class="stat-value">750</div>
-          <div class="stat-label">M&amp;A events per year (eligible)</div>
+          <div class="stat-label">M&A events per year (eligible)</div>
         </div>
         <div class="stat-card highlight">
           <div class="stat-value">420</div>
@@ -578,17 +578,17 @@ title: "M&A Paper Summary"
         <div class="figure-card">
           <div class="figure-card-header">
             <span class="figure-label">Figure 1</span>  <!-- e.g. "Figure 1" or "Table 1" -->
-            <span class="figure-title">Number of M&amp;A Events Over Time</span>
+            <span class="figure-title">Number of M&A Events Over Time</span>
           </div>
           <div class="figure-img-wrap">
             <!-- TO ADD IMAGE: delete the placeholder div below and uncomment this line -->
-            <!-- <img src="assets/img/fig1.png" alt="Figure 1: Number of M&A events over time"> -->
-            <div class="figure-placeholder">
-              <svg class="figure-placeholder-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><rect x="3" y="3" width="18" height="18" rx="2"/><path d="M3 9h18M9 21V9"/></svg>
-              <span>Upload Figure 1 — replace src above</span>
-            </div>
+            <img src="assets/img/MnA_Canada/figure1.jpg" alt="Figure 1: Number of M&A events over time">
+            <!-- <div class="figure-placeholder"> -->
+              <!-- <svg class="figure-placeholder-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><rect x="3" y="3" width="18" height="18" rx="2"/><path d="M3 9h18M9 21V9"/></svg> -->
+              <!-- <span>Upload Figure 1 — replace src above</span> -->
+            <!-- </div> -->
           </div>
-          <div class="figure-caption">Black line: all eligible M&amp;A events (~750/yr). Red line: events in the matched analysis sample (~420/yr). The matching procedure finds a control firm for ~79% of eligible treated firms.</div>
+          <div class="figure-caption">Black line: all eligible M&A events (~750/yr). Red line: events in the matched analysis sample (~420/yr). The matching procedure finds a control firm for ~79% of eligible treated firms.</div>
         </div>
       </div>
     </section>
@@ -597,8 +597,8 @@ title: "M&A Paper Summary"
     <section class="topic-panel" id="panel-firms">
       <div class="topic-header">
         <div class="topic-eyebrow">Topic 02 — Firm-Level Results</div>
-        <h2 class="topic-title">What Happens to Firms After M&amp;As?</h2>
-        <p class="topic-hook">Acquirers grow, targets shrink — but both become less profitable. There's no evidence that M&amp;As create efficiency gains.</p>
+        <h2 class="topic-title">What Happens to Firms After M&As?</h2>
+        <p class="topic-hook">Acquirers grow, targets shrink — but both become less profitable. There's no evidence that M&As create efficiency gains.</p>
       </div>
 
       <div class="audience-tabs">
@@ -609,7 +609,7 @@ title: "M&A Paper Summary"
       <div class="explanation-block active" id="firms-plain">
         <div class="explanation-text">
           <p>When a company acquires another, the buyer (acquirer) grows — it gains employees and operations. The company being bought (target) shrinks: it loses workers and its average pay falls.</p>
-          <p>But here's the surprising part: <strong>both companies become less profitable</strong> after the deal. The efficiency gains that M&amp;As are often supposed to deliver don't show up in the data. If anything, deals seem to destroy value in the short-to-medium run.</p>
+          <p>But here's the surprising part: <strong>both companies become less profitable</strong> after the deal. The efficiency gains that M&As are often supposed to deliver don't show up in the data. If anything, deals seem to destroy value in the short-to-medium run.</p>
         </div>
       </div>
 
@@ -680,8 +680,8 @@ title: "M&A Paper Summary"
     <section class="topic-panel" id="panel-workers">
       <div class="topic-header">
         <div class="topic-eyebrow">Topic 03 — Worker-Level Results</div>
-        <h2 class="topic-title">Worker Earnings After M&amp;As</h2>
-        <p class="topic-hook">Target workers earn less after M&amp;As. Acquirer workers are unaffected. The drop is driven almost entirely by those who change jobs.</p>
+        <h2 class="topic-title">Worker Earnings After M&As</h2>
+        <p class="topic-hook">Target workers earn less after M&As. Acquirer workers are unaffected. The drop is driven almost entirely by those who change jobs.</p>
       </div>
 
       <div class="audience-tabs">
@@ -699,13 +699,13 @@ title: "M&A Paper Summary"
       <div class="explanation-block" id="workers-econ">
         <div class="explanation-text">
           <p>Worker-level DiD from equation (2) with worker and year fixed effects, standard errors two-way clustered at the worker × firm level. We track incumbent workers continuously employed at the matched firm for the full 4-year pre-event window. This tenure restriction closely parallels Jacobson et al. (1993).</p>
-          <p>Target workers: −1.2 log points in annual earnings (p&lt;0.05). Acquirer workers: +0.4 log points (insignificant). Decomposing by job status: stayers at target firms show an insignificant −0.8 log points; movers from target firms show −3.3 log points (p&lt;0.001). Job transition probability spikes 20 pp in the M&amp;A year for target workers; acquirer workers show no change.</p>
+          <p>Target workers: −1.2 log points in annual earnings (p&lt;0.05). Acquirer workers: +0.4 log points (insignificant). Decomposing by job status: stayers at target firms show an insignificant −0.8 log points; movers from target firms show −3.3 log points (p&lt;0.001). Job transition probability spikes 20 pp in the M&A year for target workers; acquirer workers show no change.</p>
         </div>
       </div>
 
       <div class="key-finding">
         <div class="kf-icon"></div>
-        <div class="kf-text"><strong>Key finding:</strong> The earnings decline at target firms is driven by job changers, not by wage cuts for those who stay. M&amp;As are disruptive for incumbent workers even when aggregate firm employment stays flat.</div>
+        <div class="kf-text"><strong>Key finding:</strong> The earnings decline at target firms is driven by job changers, not by wage cuts for those who stay. M&As are disruptive for incumbent workers even when aggregate firm employment stays flat.</div>
       </div>
 
       <div class="stat-row">
@@ -723,7 +723,7 @@ title: "M&A Paper Summary"
         </div>
         <div class="stat-card">
           <div class="stat-value">+20pp</div>
-          <div class="stat-label">Job transition probability, year of M&amp;A</div>
+          <div class="stat-label">Job transition probability, year of M&A</div>
         </div>
       </div>
 
@@ -731,7 +731,7 @@ title: "M&A Paper Summary"
         <div class="figure-card">
           <div class="figure-card-header">
             <span class="figure-label">Figure 3</span>
-            <span class="figure-title">Worker Earnings &amp; Job Transitions After M&amp;As</span>
+            <span class="figure-title">Worker Earnings &amp; Job Transitions After M&As</span>
           </div>
           <div class="figure-img-wrap">
             <!-- <img src="assets/img/fig3.png" alt="Figure 3"> -->
@@ -764,7 +764,7 @@ title: "M&A Paper Summary"
       <div class="topic-header">
         <div class="topic-eyebrow">Topic 04 — Job Transitions</div>
         <h2 class="topic-title">Who Leaves — and What Happens to Them?</h2>
-        <p class="topic-hook">Target workers are far more likely to change jobs after an M&amp;A. Most move to other companies (not unemployment) — and most go to firms outside the acquiring company.</p>
+        <p class="topic-hook">Target workers are far more likely to change jobs after an M&A. Most move to other companies (not unemployment) — and most go to firms outside the acquiring company.</p>
       </div>
 
       <div class="audience-tabs">
@@ -774,7 +774,7 @@ title: "M&A Paper Summary"
 
       <div class="explanation-block active" id="movers-plain">
         <div class="explanation-text">
-          <p>In the year of the deal, target workers are 70% more likely to switch jobs than similar workers who never experienced an M&amp;A. Most of them don't end up unemployed — they land at other companies. But here's the twist: <strong>most don't go to the acquiring firm either</strong>. About 80% move to completely unrelated companies.</p>
+          <p>In the year of the deal, target workers are 70% more likely to switch jobs than similar workers who never experienced an M&A. Most of them don't end up unemployed — they land at other companies. But here's the twist: <strong>most don't go to the acquiring firm either</strong>. About 80% move to completely unrelated companies.</p>
           <p>Workers who move to the acquiring firm see smaller earnings losses. Those who move to unrelated companies lose more. And workers who switch to a completely different industry — about a quarter of movers — suffer the largest, most persistent losses.</p>
         </div>
       </div>
@@ -782,7 +782,7 @@ title: "M&A Paper Summary"
       <div class="explanation-block" id="movers-econ">
         <div class="explanation-text">
           <p>We define job movers as workers who transition within the first two years post-event (t=0 or t=1). The movers sample is defined ex ante by treatment status — control workers may also move, but empirically most do not. This parallels the displacement literature (Jacobson et al. 1993; Lachowska et al. 2022).</p>
-          <p>Movers experience −3.3 log points overall (Table 4, col. 1). By destination: movers to acquirers show −1.6 log points (insignificant); movers to non-acquiring firms show −5.0 log points (p&lt;0.001). ~80% of movers go to non-acquirers. Workers transitioning to a different industry show an additional 5.4 pp higher transition probability. The losses for movers are significantly smaller than mass-layoff literature benchmarks, consistent with a different macro context (M&amp;As are pro-cyclical).</p>
+          <p>Movers experience −3.3 log points overall (Table 4, col. 1). By destination: movers to acquirers show −1.6 log points (insignificant); movers to non-acquiring firms show −5.0 log points (p&lt;0.001). ~80% of movers go to non-acquirers. Workers transitioning to a different industry show an additional 5.4 pp higher transition probability. The losses for movers are significantly smaller than mass-layoff literature benchmarks, consistent with a different macro context (M&As are pro-cyclical).</p>
         </div>
       </div>
 
@@ -794,7 +794,7 @@ title: "M&A Paper Summary"
       <div class="stat-row">
         <div class="stat-card highlight">
           <div class="stat-value">70pp</div>
-          <div class="stat-label">More likely to move jobs in M&amp;A year</div>
+          <div class="stat-label">More likely to move jobs in M&A year</div>
         </div>
         <div class="stat-card">
           <div class="stat-value">~80%</div>
@@ -858,7 +858,7 @@ title: "M&A Paper Summary"
       <div class="explanation-block active" id="destinations-plain">
         <div class="explanation-text">
           <p>You'd expect workers who move to better companies to earn more. But that's not what happens. Workers leaving target firms land at firms that are larger, more profitable, and pay higher wages on average — and still end up earning less.</p>
-          <p>The explanation is a concept called a <em>match premium</em>: some workers and firms are simply a great fit for each other, and that fit itself has economic value. When an M&amp;A forces a worker out, they lose that fit. Even a "better" company on paper can't fully replace what they had with their old employer.</p>
+          <p>The explanation is a concept called a <em>match premium</em>: some workers and firms are simply a great fit for each other, and that fit itself has economic value. When an M&A forces a worker out, they lose that fit. Even a "better" company on paper can't fully replace what they had with their old employer.</p>
         </div>
       </div>
 
@@ -930,7 +930,7 @@ title: "M&A Paper Summary"
       <div class="topic-header">
         <div class="topic-eyebrow">Topic 06 — Heterogeneity</div>
         <h2 class="topic-title">Who Gets Hit Hardest?</h2>
-        <p class="topic-hook">Long-tenured workers and high earners bear the brunt. Short-tenure workers recover quickly. This pattern is the key to understanding why M&amp;As hurt some workers but not others.</p>
+        <p class="topic-hook">Long-tenured workers and high earners bear the brunt. Short-tenure workers recover quickly. This pattern is the key to understanding why M&As hurt some workers but not others.</p>
       </div>
 
       <div class="audience-tabs">
@@ -949,13 +949,13 @@ title: "M&A Paper Summary"
         <div class="explanation-text">
           <p>Triple-difference estimates from Table 6. Base group: movers with 4 years of tenure (minimum required for the sample). Interaction: Post × Treated × (7+ years tenure) = −4.5 log points (p&lt;0.001). Job transition rates are statistically indistinguishable across tenure groups, ruling out differential selection into moving as the mechanism.</p>
           <p>Earnings quintile heterogeneity: Post × Treated × Q5 = −4.6 log points (p&lt;0.05) relative to Q1. Sector heterogeneity shows similar patterns across tradable and non-tradable sectors, further downweighting a product-market-power channel. Age heterogeneity shows the largest declines for workers 50+, consistent with the tenure pattern.</p>
-          <p>This heterogeneity is consistent with two broad model classes: (1) implicit contract models (Lazear 1979, Burdett &amp; Coles 2003) where tenure-increasing wage profiles are breached by new management, and (2) firm-specific human capital / directed search models (Lazear 2009, Menzio &amp; Shi 2011) where long matches reflect productive complementarities that are destroyed by the M&amp;A.</p>
+          <p>This heterogeneity is consistent with two broad model classes: (1) implicit contract models (Lazear 1979, Burdett &amp; Coles 2003) where tenure-increasing wage profiles are breached by new management, and (2) firm-specific human capital / directed search models (Lazear 2009, Menzio &amp; Shi 2011) where long matches reflect productive complementarities that are destroyed by the M&A.</p>
         </div>
       </div>
 
       <div class="key-finding">
         <div class="kf-icon"></div>
-        <div class="kf-text"><strong>Key finding:</strong> The concentration of losses among long-tenured, high-earning workers is consistent with models where wages rise with tenure (either through contracts or human capital accumulation). M&amp;As provide an opportunity to breach these relationships — and the costs fall on the workers who had invested most in them.</div>
+        <div class="kf-text"><strong>Key finding:</strong> The concentration of losses among long-tenured, high-earning workers is consistent with models where wages rise with tenure (either through contracts or human capital accumulation). M&As provide an opportunity to breach these relationships — and the costs fall on the workers who had invested most in them.</div>
       </div>
 
       <div class="stat-row">
