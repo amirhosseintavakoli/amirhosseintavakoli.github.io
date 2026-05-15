@@ -1,0 +1,971 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Job Transitions and Employee Earnings After Acquisitions</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Lora:ital,wght@0,400;0,500;1,400&family=DM+Sans:wght@300;400;500&display=swap" rel="stylesheet">
+<style>
+  :root {
+    --navy: #1a2540;
+    --navy-light: #243058;
+    --accent: #c0552a;
+    --accent-light: #e8ddd7;
+    --cream: #f7f4f0;
+    --sand: #ede9e3;
+    --text-primary: #1a2540;
+    --text-secondary: #5a6070;
+    --text-muted: #8a909e;
+    --border: #d8d3cc;
+    --white: #ffffff;
+  }
+
+  * { box-sizing: border-box; margin: 0; padding: 0; }
+
+  body {
+    font-family: 'DM Sans', sans-serif;
+    background: var(--cream);
+    color: var(--text-primary);
+    min-height: 100vh;
+    font-size: 15px;
+    line-height: 1.6;
+  }
+
+  .page-header {
+    background: var(--navy);
+    color: #fff;
+    padding: 48px 48px 40px;
+  }
+
+  .paper-label {
+    font-size: 11px;
+    letter-spacing: 0.12em;
+    text-transform: uppercase;
+    color: rgba(255,255,255,0.5);
+    margin-bottom: 14px;
+    font-weight: 500;
+  }
+
+  .paper-title {
+    font-family: 'Lora', serif;
+    font-size: 26px;
+    font-weight: 400;
+    line-height: 1.35;
+    color: #fff;
+    max-width: 720px;
+    margin-bottom: 20px;
+  }
+
+  .paper-meta {
+    display: flex;
+    align-items: center;
+    gap: 24px;
+    flex-wrap: wrap;
+  }
+
+  .authors {
+    font-size: 13px;
+    color: rgba(255,255,255,0.65);
+  }
+
+  .journal-badge {
+    font-size: 11px;
+    background: var(--accent);
+    color: #fff;
+    padding: 4px 12px;
+    border-radius: 3px;
+    font-weight: 500;
+    letter-spacing: 0.04em;
+  }
+
+  .pdf-link {
+    font-size: 12px;
+    color: rgba(255,255,255,0.55);
+    text-decoration: none;
+    border-bottom: 1px solid rgba(255,255,255,0.25);
+    padding-bottom: 1px;
+    transition: color 0.15s;
+  }
+  .pdf-link:hover { color: rgba(255,255,255,0.9); }
+
+  .layout {
+    display: flex;
+    min-height: calc(100vh - 180px);
+  }
+
+  .sidebar {
+    width: 240px;
+    flex-shrink: 0;
+    background: var(--sand);
+    border-right: 1px solid var(--border);
+    padding: 32px 0;
+    position: sticky;
+    top: 0;
+    height: fit-content;
+  }
+
+  .sidebar-label {
+    font-size: 10px;
+    letter-spacing: 0.12em;
+    text-transform: uppercase;
+    color: var(--text-muted);
+    font-weight: 500;
+    padding: 0 24px;
+    margin-bottom: 12px;
+  }
+
+  .topic-btn {
+    display: block;
+    width: 100%;
+    text-align: left;
+    padding: 11px 24px;
+    background: none;
+    border: none;
+    cursor: pointer;
+    font-family: 'DM Sans', sans-serif;
+    font-size: 13.5px;
+    color: var(--text-secondary);
+    line-height: 1.4;
+    border-left: 3px solid transparent;
+    transition: all 0.15s;
+    position: relative;
+  }
+
+  .topic-btn:hover {
+    background: rgba(26,37,64,0.05);
+    color: var(--text-primary);
+  }
+
+  .topic-btn.active {
+    background: var(--white);
+    color: var(--navy);
+    border-left-color: var(--accent);
+    font-weight: 500;
+  }
+
+  .topic-num {
+    font-size: 10px;
+    color: var(--text-muted);
+    display: block;
+    margin-bottom: 2px;
+    font-weight: 400;
+  }
+
+  .topic-btn.active .topic-num { color: var(--accent); }
+
+  .main {
+    flex: 1;
+    padding: 40px 48px;
+    max-width: 860px;
+  }
+
+  .topic-panel { display: none; }
+  .topic-panel.active { display: block; }
+
+  .topic-header {
+    margin-bottom: 28px;
+    padding-bottom: 20px;
+    border-bottom: 1px solid var(--border);
+  }
+
+  .topic-eyebrow {
+    font-size: 10px;
+    letter-spacing: 0.12em;
+    text-transform: uppercase;
+    color: var(--accent);
+    font-weight: 500;
+    margin-bottom: 8px;
+  }
+
+  .topic-title {
+    font-family: 'Lora', serif;
+    font-size: 22px;
+    font-weight: 400;
+    color: var(--navy);
+    margin-bottom: 10px;
+    line-height: 1.3;
+  }
+
+  .topic-hook {
+    font-size: 15px;
+    color: var(--text-secondary);
+    line-height: 1.65;
+    max-width: 640px;
+  }
+
+  .audience-tabs {
+    display: flex;
+    gap: 0;
+    margin-bottom: 28px;
+    border-bottom: 1px solid var(--border);
+  }
+
+  .aud-tab {
+    padding: 8px 18px;
+    font-size: 12px;
+    font-weight: 500;
+    color: var(--text-muted);
+    cursor: pointer;
+    background: none;
+    border: none;
+    font-family: 'DM Sans', sans-serif;
+    border-bottom: 2px solid transparent;
+    margin-bottom: -1px;
+    transition: all 0.15s;
+    letter-spacing: 0.02em;
+  }
+
+  .aud-tab:hover { color: var(--text-primary); }
+  .aud-tab.active {
+    color: var(--navy);
+    border-bottom-color: var(--navy);
+  }
+
+  .explanation-block { display: none; }
+  .explanation-block.active { display: block; }
+
+  .explanation-text {
+    background: var(--white);
+    border: 1px solid var(--border);
+    border-left: 3px solid var(--navy);
+    padding: 16px 20px;
+    border-radius: 0 6px 6px 0;
+    font-size: 14.5px;
+    line-height: 1.7;
+    color: var(--text-primary);
+    margin-bottom: 24px;
+  }
+
+  .explanation-text p + p { margin-top: 10px; }
+
+  .key-finding {
+    display: flex;
+    align-items: flex-start;
+    gap: 12px;
+    background: var(--accent-light);
+    border: 1px solid #d8b8aa;
+    border-radius: 6px;
+    padding: 14px 18px;
+    margin-bottom: 24px;
+  }
+
+  .kf-icon {
+    width: 20px;
+    height: 20px;
+    background: var(--accent);
+    border-radius: 50%;
+    flex-shrink: 0;
+    margin-top: 2px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+
+  .kf-icon::after {
+    content: '';
+    width: 6px;
+    height: 6px;
+    background: #fff;
+    border-radius: 50%;
+  }
+
+  .kf-text {
+    font-size: 13.5px;
+    line-height: 1.6;
+    color: #6b3020;
+  }
+
+  .kf-text strong { color: #4a1f12; font-weight: 500; }
+
+  .figures-grid {
+    display: flex;
+    flex-direction: column;
+    gap: 28px;
+  }
+
+  .figure-card {
+    background: var(--white);
+    border: 1px solid var(--border);
+    border-radius: 8px;
+    overflow: hidden;
+  }
+
+  .figure-card-header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 12px 20px;
+    border-bottom: 1px solid var(--border);
+    background: #faf9f7;
+  }
+
+  .figure-label {
+    font-size: 11px;
+    font-weight: 500;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+    color: var(--text-muted);
+  }
+
+  .figure-title {
+    font-size: 13.5px;
+    color: var(--text-primary);
+    font-weight: 500;
+  }
+
+  .figure-img-wrap {
+    padding: 24px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    min-height: 260px;
+    background: var(--white);
+  }
+
+  .figure-placeholder {
+    width: 100%;
+    border: 2px dashed var(--border);
+    border-radius: 6px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    min-height: 240px;
+    gap: 10px;
+    color: var(--text-muted);
+    font-size: 13px;
+  }
+
+  .figure-placeholder-icon {
+    width: 36px;
+    height: 36px;
+    opacity: 0.35;
+  }
+
+  .figure-img-wrap img {
+    max-width: 100%;
+    height: auto;
+    display: block;
+  }
+
+  .figure-caption {
+    padding: 12px 20px;
+    border-top: 1px solid var(--border);
+    font-size: 12.5px;
+    color: var(--text-secondary);
+    line-height: 1.55;
+    font-style: italic;
+    background: #faf9f7;
+  }
+
+  .stat-row {
+    display: flex;
+    gap: 12px;
+    flex-wrap: wrap;
+    margin-bottom: 24px;
+  }
+
+  .stat-card {
+    background: var(--white);
+    border: 1px solid var(--border);
+    border-radius: 6px;
+    padding: 14px 18px;
+    flex: 1;
+    min-width: 120px;
+  }
+
+  .stat-value {
+    font-family: 'Lora', serif;
+    font-size: 26px;
+    font-weight: 400;
+    color: var(--navy);
+    line-height: 1;
+    margin-bottom: 6px;
+  }
+
+  .stat-label {
+    font-size: 12px;
+    color: var(--text-muted);
+    line-height: 1.4;
+  }
+
+  .stat-card.highlight .stat-value { color: var(--accent); }
+
+  .divider {
+    height: 1px;
+    background: var(--border);
+    margin: 32px 0;
+  }
+
+  .footnote {
+    font-size: 12px;
+    color: var(--text-muted);
+    font-style: italic;
+    margin-top: 16px;
+  }
+
+  @media (max-width: 700px) {
+    .layout { flex-direction: column; }
+    .sidebar { width: 100%; position: static; padding: 20px 0; }
+    .main { padding: 24px 20px; }
+    .page-header { padding: 32px 20px; }
+    .paper-title { font-size: 20px; }
+  }
+</style>
+</head>
+<body>
+
+<header class="page-header">
+  <div class="paper-label">Research Summary</div>
+  <h1 class="paper-title">Job Transitions and Employee Earnings After Acquisitions: Linking Corporate and Worker Outcomes</h1>
+  <div class="paper-meta">
+    <span class="authors">Arnold · Milligan · Moon · Tavakoli</span>
+    <span class="journal-badge">Review of Economics and Statistics</span>
+    <a class="pdf-link" href="assets/pdfs/MnA_Canada_draft.pdf" target="_blank">Full paper →</a>
+  </div>
+</header>
+
+<div class="layout">
+
+  <nav class="sidebar" aria-label="Topics">
+    <div class="sidebar-label">Explore by topic</div>
+
+    <button class="topic-btn active" onclick="setTopic('trends')">
+      <span class="topic-num">Topic 01</span>
+      M&amp;A Activity in Canada
+    </button>
+    <button class="topic-btn" onclick="setTopic('firms')">
+      <span class="topic-num">Topic 02</span>
+      What Happens to Firms?
+    </button>
+    <button class="topic-btn" onclick="setTopic('workers')">
+      <span class="topic-num">Topic 03</span>
+      Worker Earnings After M&amp;As
+    </button>
+    <button class="topic-btn" onclick="setTopic('movers')">
+      <span class="topic-num">Topic 04</span>
+      Who Leaves — and What Happens?
+    </button>
+    <button class="topic-btn" onclick="setTopic('destinations')">
+      <span class="topic-num">Topic 05</span>
+      Where Do Workers Go?
+    </button>
+    <button class="topic-btn" onclick="setTopic('heterogeneity')">
+      <span class="topic-num">Topic 06</span>
+      Who Gets Hit Hardest?
+    </button>
+  </nav>
+
+  <main class="main">
+
+    <!-- TOPIC 1: M&A TRENDS -->
+    <section class="topic-panel active" id="panel-trends">
+      <div class="topic-header">
+        <div class="topic-eyebrow">Topic 01 — Setting the Stage</div>
+        <h2 class="topic-title">M&amp;A Activity in Canada</h2>
+        <p class="topic-hook">How many deals are we talking about, and how do we identify which firms and workers to study?</p>
+      </div>
+
+      <div class="audience-tabs">
+        <button class="aud-tab active" onclick="setAudience(this, 'trends')">Plain English</button>
+        <button class="aud-tab" onclick="setAudience(this, 'trends')">For Economists</button>
+      </div>
+
+      <div class="explanation-block active" id="trends-plain">
+        <div class="explanation-text">
+          <p>Canada sees around <strong>750 merger and acquisition deals per year</strong> among the firms in our data. Think of these as moments when one company buys or absorbs another. We follow these deals from 2005 to 2017.</p>
+          <p>To figure out whether M&amp;As actually cause changes (rather than just happening at companies that were already changing), we find a "twin" for each M&amp;A firm — a similar company that never went through a deal. Comparing the two tells us what the deal itself did.</p>
+        </div>
+      </div>
+
+      <div class="explanation-block" id="trends-econ">
+        <div class="explanation-text">
+          <p>Our sample covers M&amp;A events from the SDC Platinum database matched to the Canadian Employer-Employee Dynamics Database (CEEDD), which links corporate T2 tax records to individual T1 and T4 filings. The match rate is ~75%, yielding ~420 matched deals per year from a pool of ~750 eligible events.</p>
+          <p>We implement a matched difference-in-differences design. Control firms are selected via propensity score matching on total revenue, average payrolls, and firm age, exactly within 2-digit NAICS sector, province, and year. ~80% of events are acquisitions (target continues as a separate entity); the remainder are mergers (full integration). We analyze targets and acquirers separately for acquisitions and aggregate for mergers.</p>
+        </div>
+      </div>
+
+      <div class="stat-row">
+        <div class="stat-card highlight">
+          <div class="stat-value">750</div>
+          <div class="stat-label">M&amp;A events per year (eligible)</div>
+        </div>
+        <div class="stat-card highlight">
+          <div class="stat-value">420</div>
+          <div class="stat-label">Matched events per year (analysis sample)</div>
+        </div>
+        <div class="stat-card">
+          <div class="stat-value">~80%</div>
+          <div class="stat-label">of events are acquisitions (target survives)</div>
+        </div>
+        <div class="stat-card">
+          <div class="stat-value">2005–17</div>
+          <div class="stat-label">Sample period</div>
+        </div>
+      </div>
+
+      <div class="figures-grid">
+        <div class="figure-card">
+          <div class="figure-card-header">
+            <span class="figure-label">Figure 1</span>
+            <span class="figure-title">Number of M&amp;A Events Over Time</span>
+          </div>
+          <div class="figure-img-wrap">
+            <!-- REPLACE src with your actual figure path, e.g. assets/img/fig1.png -->
+            <!-- <img src="assets/img/fig1.png" alt="Figure 1: Number of M&A events over time"> -->
+            <div class="figure-placeholder">
+              <svg class="figure-placeholder-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><rect x="3" y="3" width="18" height="18" rx="2"/><path d="M3 9h18M9 21V9"/></svg>
+              <span>Upload Figure 1 — replace src above</span>
+            </div>
+          </div>
+          <div class="figure-caption">Black line: all eligible M&amp;A events (~750/yr). Red line: events in the matched analysis sample (~420/yr). The matching procedure finds a control firm for ~79% of eligible treated firms.</div>
+        </div>
+      </div>
+    </section>
+
+    <!-- TOPIC 2: FIRM OUTCOMES -->
+    <section class="topic-panel" id="panel-firms">
+      <div class="topic-header">
+        <div class="topic-eyebrow">Topic 02 — Firm-Level Results</div>
+        <h2 class="topic-title">What Happens to Firms After M&amp;As?</h2>
+        <p class="topic-hook">Acquirers grow, targets shrink — but both become less profitable. There's no evidence that M&amp;As create efficiency gains.</p>
+      </div>
+
+      <div class="audience-tabs">
+        <button class="aud-tab active" onclick="setAudience(this, 'firms')">Plain English</button>
+        <button class="aud-tab" onclick="setAudience(this, 'firms')">For Economists</button>
+      </div>
+
+      <div class="explanation-block active" id="firms-plain">
+        <div class="explanation-text">
+          <p>When a company acquires another, the buyer (acquirer) grows — it gains employees and operations. The company being bought (target) shrinks: it loses workers and its average pay falls.</p>
+          <p>But here's the surprising part: <strong>both companies become less profitable</strong> after the deal. The efficiency gains that M&amp;As are often supposed to deliver don't show up in the data. If anything, deals seem to destroy value in the short-to-medium run.</p>
+        </div>
+      </div>
+
+      <div class="explanation-block" id="firms-econ">
+        <div class="explanation-text">
+          <p>Event-study estimates from equation (1) — a matched DiD with firm and year fixed effects, 4-digit NAICS × year controls, and a quartic in firm age — show parallel pre-trends for both targets and acquirers, supporting the design.</p>
+          <p>Post-event: target employment falls 8.9 log points, average payrolls fall 2.6 log points. Acquirer employment rises 18.8 log points with no payroll change. At the aggregate level (targets + acquirers pooled), employment and payrolls are roughly flat — the deal reshuffles, it doesn't create. Profit margins fall 0.7 pp for targets, 1.9 pp for acquirers; return on assets falls 3.3 pp and 1.3 pp respectively. These profitability declines are inconsistent with an efficiency or market-power channel.</p>
+        </div>
+      </div>
+
+      <div class="key-finding">
+        <div class="kf-icon"></div>
+        <div class="kf-text"><strong>Key finding:</strong> Neither acquiring nor target firms become more profitable after the deal. This rules out efficiency gains and increased market power as primary drivers of post-M&A worker outcomes.</div>
+      </div>
+
+      <div class="stat-row">
+        <div class="stat-card">
+          <div class="stat-value">−8.9%</div>
+          <div class="stat-label">Target employment (log pts)</div>
+        </div>
+        <div class="stat-card">
+          <div class="stat-value">+18.8%</div>
+          <div class="stat-label">Acquirer employment (log pts)</div>
+        </div>
+        <div class="stat-card highlight">
+          <div class="stat-value">−1.9pp</div>
+          <div class="stat-label">Acquirer profit margins</div>
+        </div>
+        <div class="stat-card highlight">
+          <div class="stat-value">−3.3pp</div>
+          <div class="stat-label">Target return on assets</div>
+        </div>
+      </div>
+
+      <div class="figures-grid">
+        <div class="figure-card">
+          <div class="figure-card-header">
+            <span class="figure-label">Figure 2 (panels a–d)</span>
+            <span class="figure-title">Employment, Payrolls &amp; Profitability — Acquisitions</span>
+          </div>
+          <div class="figure-img-wrap">
+            <!-- <img src="assets/img/fig2_abcd.png" alt="Figure 2 panels a-d"> -->
+            <div class="figure-placeholder">
+              <svg class="figure-placeholder-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><rect x="3" y="3" width="18" height="18" rx="2"/><path d="M3 9h18M9 21V9"/></svg>
+              <span>Upload Figure 2 (panels a–d)</span>
+            </div>
+          </div>
+          <div class="figure-caption">Navy = acquirer, orange = target. Panels (a) log employment, (b) log average payrolls, (c) profit margins, (d) return on assets. Dashed lines = 95% CIs. Event in year 0; normalized to zero at year −1.</div>
+        </div>
+        <div class="figure-card">
+          <div class="figure-card-header">
+            <span class="figure-label">Table 2</span>
+            <span class="figure-title">DiD Estimates on Firm Outcomes</span>
+          </div>
+          <div class="figure-img-wrap">
+            <!-- <img src="assets/img/table2.png" alt="Table 2"> -->
+            <div class="figure-placeholder">
+              <svg class="figure-placeholder-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><rect x="3" y="3" width="18" height="18" rx="2"/><path d="M3 9h18M9 21V9"/></svg>
+              <span>Upload Table 2</span>
+            </div>
+          </div>
+          <div class="figure-caption">Columns (1)–(2): targets and acquirers in acquisitions. Columns (3)–(4): aggregate outcomes for acquisitions and mergers. Standard errors clustered at the firm level.</div>
+        </div>
+      </div>
+    </section>
+
+    <!-- TOPIC 3: WORKER EARNINGS -->
+    <section class="topic-panel" id="panel-workers">
+      <div class="topic-header">
+        <div class="topic-eyebrow">Topic 03 — Worker-Level Results</div>
+        <h2 class="topic-title">Worker Earnings After M&amp;As</h2>
+        <p class="topic-hook">Target workers earn less after M&amp;As. Acquirer workers are unaffected. The drop is driven almost entirely by those who change jobs.</p>
+      </div>
+
+      <div class="audience-tabs">
+        <button class="aud-tab active" onclick="setAudience(this, 'workers')">Plain English</button>
+        <button class="aud-tab" onclick="setAudience(this, 'workers')">For Economists</button>
+      </div>
+
+      <div class="explanation-block active" id="workers-plain">
+        <div class="explanation-text">
+          <p>We track individual workers — people who had been at their firm for at least 4 years before the deal — and follow their paychecks for years afterward.</p>
+          <p>Workers at the company being bought (target) see their annual earnings fall by about 1.2% on average. Workers at the buying company are essentially unaffected. The story for target workers gets more interesting when we split them: those who <em>stay</em> at the target firm see barely any change, but those who <em>leave</em> lose about 3.3%.</p>
+        </div>
+      </div>
+
+      <div class="explanation-block" id="workers-econ">
+        <div class="explanation-text">
+          <p>Worker-level DiD from equation (2) with worker and year fixed effects, standard errors two-way clustered at the worker × firm level. We track incumbent workers continuously employed at the matched firm for the full 4-year pre-event window. This tenure restriction closely parallels Jacobson et al. (1993).</p>
+          <p>Target workers: −1.2 log points in annual earnings (p&lt;0.05). Acquirer workers: +0.4 log points (insignificant). Decomposing by job status: stayers at target firms show an insignificant −0.8 log points; movers from target firms show −3.3 log points (p&lt;0.001). Job transition probability spikes 20 pp in the M&amp;A year for target workers; acquirer workers show no change.</p>
+        </div>
+      </div>
+
+      <div class="key-finding">
+        <div class="kf-icon"></div>
+        <div class="kf-text"><strong>Key finding:</strong> The earnings decline at target firms is driven by job changers, not by wage cuts for those who stay. M&amp;As are disruptive for incumbent workers even when aggregate firm employment stays flat.</div>
+      </div>
+
+      <div class="stat-row">
+        <div class="stat-card highlight">
+          <div class="stat-value">−1.2%</div>
+          <div class="stat-label">Target worker earnings (overall)</div>
+        </div>
+        <div class="stat-card">
+          <div class="stat-value">−0.8%</div>
+          <div class="stat-label">Stayers at target (not significant)</div>
+        </div>
+        <div class="stat-card highlight">
+          <div class="stat-value">−3.3%</div>
+          <div class="stat-label">Movers from target firms</div>
+        </div>
+        <div class="stat-card">
+          <div class="stat-value">+20pp</div>
+          <div class="stat-label">Job transition probability, year of M&amp;A</div>
+        </div>
+      </div>
+
+      <div class="figures-grid">
+        <div class="figure-card">
+          <div class="figure-card-header">
+            <span class="figure-label">Figure 3</span>
+            <span class="figure-title">Worker Earnings &amp; Job Transitions After M&amp;As</span>
+          </div>
+          <div class="figure-img-wrap">
+            <!-- <img src="assets/img/fig3.png" alt="Figure 3"> -->
+            <div class="figure-placeholder">
+              <svg class="figure-placeholder-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><rect x="3" y="3" width="18" height="18" rx="2"/><path d="M3 9h18M9 21V9"/></svg>
+              <span>Upload Figure 3 (all panels)</span>
+            </div>
+          </div>
+          <div class="figure-caption">Panel (a): log earnings — all target and acquirer workers. Panel (b): job transition probability. Panel (c): log earnings restricted to stayers only. Navy = acquirer workers, orange = target workers.</div>
+        </div>
+        <div class="figure-card">
+          <div class="figure-card-header">
+            <span class="figure-label">Table 3</span>
+            <span class="figure-title">DiD Estimates on Worker Outcomes</span>
+          </div>
+          <div class="figure-img-wrap">
+            <!-- <img src="assets/img/table3.png" alt="Table 3"> -->
+            <div class="figure-placeholder">
+              <svg class="figure-placeholder-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><rect x="3" y="3" width="18" height="18" rx="2"/><path d="M3 9h18M9 21V9"/></svg>
+              <span>Upload Table 3</span>
+            </div>
+          </div>
+          <div class="figure-caption">Column (1): log earnings. Column (2): job transition probability. Column (3): log earnings for stayers only. Two-way clustered standard errors (worker × firm).</div>
+        </div>
+      </div>
+    </section>
+
+    <!-- TOPIC 4: WHO LEAVES -->
+    <section class="topic-panel" id="panel-movers">
+      <div class="topic-header">
+        <div class="topic-eyebrow">Topic 04 — Job Transitions</div>
+        <h2 class="topic-title">Who Leaves — and What Happens to Them?</h2>
+        <p class="topic-hook">Target workers are far more likely to change jobs after an M&amp;A. Most move to other companies (not unemployment) — and most go to firms outside the acquiring company.</p>
+      </div>
+
+      <div class="audience-tabs">
+        <button class="aud-tab active" onclick="setAudience(this, 'movers')">Plain English</button>
+        <button class="aud-tab" onclick="setAudience(this, 'movers')">For Economists</button>
+      </div>
+
+      <div class="explanation-block active" id="movers-plain">
+        <div class="explanation-text">
+          <p>In the year of the deal, target workers are 70% more likely to switch jobs than similar workers who never experienced an M&amp;A. Most of them don't end up unemployed — they land at other companies. But here's the twist: <strong>most don't go to the acquiring firm either</strong>. About 80% move to completely unrelated companies.</p>
+          <p>Workers who move to the acquiring firm see smaller earnings losses. Those who move to unrelated companies lose more. And workers who switch to a completely different industry — about a quarter of movers — suffer the largest, most persistent losses.</p>
+        </div>
+      </div>
+
+      <div class="explanation-block" id="movers-econ">
+        <div class="explanation-text">
+          <p>We define job movers as workers who transition within the first two years post-event (t=0 or t=1). The movers sample is defined ex ante by treatment status — control workers may also move, but empirically most do not. This parallels the displacement literature (Jacobson et al. 1993; Lachowska et al. 2022).</p>
+          <p>Movers experience −3.3 log points overall (Table 4, col. 1). By destination: movers to acquirers show −1.6 log points (insignificant); movers to non-acquiring firms show −5.0 log points (p&lt;0.001). ~80% of movers go to non-acquirers. Workers transitioning to a different industry show an additional 5.4 pp higher transition probability. The losses for movers are significantly smaller than mass-layoff literature benchmarks, consistent with a different macro context (M&amp;As are pro-cyclical).</p>
+        </div>
+      </div>
+
+      <div class="key-finding">
+        <div class="kf-icon"></div>
+        <div class="kf-text"><strong>Key finding:</strong> 80% of target workers who leave do so to firms unrelated to the acquirer. This means earnings losses are not mechanically caused by forced reallocation to a specific acquirer — they reflect a broader disruption of the worker–firm relationship.</div>
+      </div>
+
+      <div class="stat-row">
+        <div class="stat-card highlight">
+          <div class="stat-value">70pp</div>
+          <div class="stat-label">More likely to move jobs in M&amp;A year</div>
+        </div>
+        <div class="stat-card">
+          <div class="stat-value">~80%</div>
+          <div class="stat-label">Move to non-acquiring firms</div>
+        </div>
+        <div class="stat-card highlight">
+          <div class="stat-value">−5.0%</div>
+          <div class="stat-label">Earnings loss: movers to other firms</div>
+        </div>
+        <div class="stat-card">
+          <div class="stat-value">−1.6%</div>
+          <div class="stat-label">Earnings loss: movers to acquirer (n.s.)</div>
+        </div>
+      </div>
+
+      <div class="figures-grid">
+        <div class="figure-card">
+          <div class="figure-card-header">
+            <span class="figure-label">Figure 4</span>
+            <span class="figure-title">Earnings &amp; Transitions for Workers Moving from Targets</span>
+          </div>
+          <div class="figure-img-wrap">
+            <!-- <img src="assets/img/fig4.png" alt="Figure 4"> -->
+            <div class="figure-placeholder">
+              <svg class="figure-placeholder-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><rect x="3" y="3" width="18" height="18" rx="2"/><path d="M3 9h18M9 21V9"/></svg>
+              <span>Upload Figure 4 (all panels)</span>
+            </div>
+          </div>
+          <div class="figure-caption">Panel (a): log earnings for all movers. Panel (b): job transition probability. Panel (c): earnings split by destination (acquirer vs. other firms). Panel (d): probability of switching to a different industry.</div>
+        </div>
+        <div class="figure-card">
+          <div class="figure-card-header">
+            <span class="figure-label">Table 4</span>
+            <span class="figure-title">DiD Estimates — Workers Moving from Targets</span>
+          </div>
+          <div class="figure-img-wrap">
+            <!-- <img src="assets/img/table4.png" alt="Table 4"> -->
+            <div class="figure-placeholder">
+              <svg class="figure-placeholder-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><rect x="3" y="3" width="18" height="18" rx="2"/><path d="M3 9h18M9 21V9"/></svg>
+              <span>Upload Table 4</span>
+            </div>
+          </div>
+          <div class="figure-caption">Column (1): log earnings. Column (2): transition probability. Columns (3)–(4): earnings by destination. Column (5): probability of industry switch. N ≈ 690,000 worker-years.</div>
+        </div>
+      </div>
+    </section>
+
+    <!-- TOPIC 5: WHERE DO WORKERS GO -->
+    <section class="topic-panel" id="panel-destinations">
+      <div class="topic-header">
+        <div class="topic-eyebrow">Topic 05 — The Destination Puzzle</div>
+        <h2 class="topic-title">Where Do Workers Go — and Why Do They Still Earn Less?</h2>
+        <p class="topic-hook">Workers who leave target firms move to bigger, more profitable companies with higher wage premiums. Yet they still earn less. The culprit: losing a valuable match with their old employer.</p>
+      </div>
+
+      <div class="audience-tabs">
+        <button class="aud-tab active" onclick="setAudience(this, 'destinations')">Plain English</button>
+        <button class="aud-tab" onclick="setAudience(this, 'destinations')">For Economists</button>
+      </div>
+
+      <div class="explanation-block active" id="destinations-plain">
+        <div class="explanation-text">
+          <p>You'd expect workers who move to better companies to earn more. But that's not what happens. Workers leaving target firms land at firms that are larger, more profitable, and pay higher wages on average — and still end up earning less.</p>
+          <p>The explanation is a concept called a <em>match premium</em>: some workers and firms are simply a great fit for each other, and that fit itself has economic value. When an M&amp;A forces a worker out, they lose that fit. Even a "better" company on paper can't fully replace what they had with their old employer.</p>
+        </div>
+      </div>
+
+      <div class="explanation-block" id="destinations-econ">
+        <div class="explanation-text">
+          <p>We estimate AKM firm fixed effects (Abowd, Kramarz, Margolis 1999) and match effects following Woodcock (2015) / Lachowska et al. (2022). Employer fixed effects rise 3.2 log points post-move (Table 5, col. 1) — confirming movers go to higher-wage firms. But match effects fall 9.0 log points (col. 2), more than offsetting the firm-premium gain. Observable firm characteristics corroborate: movers' new employers have 49.9 log points higher revenue and 1.8 pp higher profit margins on average.</p>
+          <p>These results suggest AKM-type wage decompositions understate worker-specific match value, consistent with Borovičková and Shimer (2024)'s critique that exogenous mobility tests may be underpowered when match effects are important to mobility decisions.</p>
+        </div>
+      </div>
+
+      <div class="key-finding">
+        <div class="kf-icon"></div>
+        <div class="kf-text"><strong>Key finding:</strong> Firm quality goes up (+3.2 log pts employer fixed effect), but match quality collapses (−9.0 log pts). Workers are paying an invisible tax on job disruption: the loss of a productive employment relationship that took years to build.</div>
+      </div>
+
+      <div class="stat-row">
+        <div class="stat-card">
+          <div class="stat-value">+3.2%</div>
+          <div class="stat-label">Rise in employer wage premium (AKM effect)</div>
+        </div>
+        <div class="stat-card highlight">
+          <div class="stat-value">−9.0%</div>
+          <div class="stat-label">Fall in match effect (worker–firm fit)</div>
+        </div>
+        <div class="stat-card">
+          <div class="stat-value">+50%</div>
+          <div class="stat-label">Higher revenue at destination firm (log pts)</div>
+        </div>
+        <div class="stat-card">
+          <div class="stat-value">+1.8pp</div>
+          <div class="stat-label">Higher profit margins at destination firm</div>
+        </div>
+      </div>
+
+      <div class="figures-grid">
+        <div class="figure-card">
+          <div class="figure-card-header">
+            <span class="figure-label">Figure 5</span>
+            <span class="figure-title">Firm Characteristics of Workers Moving from Targets</span>
+          </div>
+          <div class="figure-img-wrap">
+            <!-- <img src="assets/img/fig5.png" alt="Figure 5"> -->
+            <div class="figure-placeholder">
+              <svg class="figure-placeholder-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><rect x="3" y="3" width="18" height="18" rx="2"/><path d="M3 9h18M9 21V9"/></svg>
+              <span>Upload Figure 5 (all panels)</span>
+            </div>
+          </div>
+          <div class="figure-caption">Panel (a): AKM employer fixed effect. Panel (b): match effect. Panel (c): log revenue. Panel (d): profit margins. All relative to matched control workers. Event at year 0.</div>
+        </div>
+        <div class="figure-card">
+          <div class="figure-card-header">
+            <span class="figure-label">Table 5</span>
+            <span class="figure-title">Changes in Average Firm Characteristics of Movers</span>
+          </div>
+          <div class="figure-img-wrap">
+            <!-- <img src="assets/img/table5.png" alt="Table 5"> -->
+            <div class="figure-placeholder">
+              <svg class="figure-placeholder-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><rect x="3" y="3" width="18" height="18" rx="2"/><path d="M3 9h18M9 21V9"/></svg>
+              <span>Upload Table 5</span>
+            </div>
+          </div>
+          <div class="figure-caption">Columns (1)–(4): employer fixed effect, match effect, log revenue, profit margins. N ≈ 650,000–685,000 worker-years. Standard errors two-way clustered at worker × firm level.</div>
+        </div>
+      </div>
+    </section>
+
+    <!-- TOPIC 6: HETEROGENEITY -->
+    <section class="topic-panel" id="panel-heterogeneity">
+      <div class="topic-header">
+        <div class="topic-eyebrow">Topic 06 — Heterogeneity</div>
+        <h2 class="topic-title">Who Gets Hit Hardest?</h2>
+        <p class="topic-hook">Long-tenured workers and high earners bear the brunt. Short-tenure workers recover quickly. This pattern is the key to understanding why M&amp;As hurt some workers but not others.</p>
+      </div>
+
+      <div class="audience-tabs">
+        <button class="aud-tab active" onclick="setAudience(this, 'heterogeneity')">Plain English</button>
+        <button class="aud-tab" onclick="setAudience(this, 'heterogeneity')">For Economists</button>
+      </div>
+
+      <div class="explanation-block active" id="heterogeneity-plain">
+        <div class="explanation-text">
+          <p>Not all workers are equally hurt. Employees with 7 or more years at the company before the deal suffer earnings losses that are 4.5% larger than employees with just 4 years. The long-tenured group never fully recovers over our observation window.</p>
+          <p>Similarly, workers in the top earnings quintile at their firm lose 4.6% more than those in the bottom quintile. In other words: the longer and better an employment relationship, the more valuable it is — and the more painful it is to lose.</p>
+        </div>
+      </div>
+
+      <div class="explanation-block" id="heterogeneity-econ">
+        <div class="explanation-text">
+          <p>Triple-difference estimates from Table 6. Base group: movers with 4 years of tenure (minimum required for the sample). Interaction: Post × Treated × (7+ years tenure) = −4.5 log points (p&lt;0.001). Job transition rates are statistically indistinguishable across tenure groups, ruling out differential selection into moving as the mechanism.</p>
+          <p>Earnings quintile heterogeneity: Post × Treated × Q5 = −4.6 log points (p&lt;0.05) relative to Q1. Sector heterogeneity shows similar patterns across tradable and non-tradable sectors, further downweighting a product-market-power channel. Age heterogeneity shows the largest declines for workers 50+, consistent with the tenure pattern.</p>
+          <p>This heterogeneity is consistent with two broad model classes: (1) implicit contract models (Lazear 1979, Burdett &amp; Coles 2003) where tenure-increasing wage profiles are breached by new management, and (2) firm-specific human capital / directed search models (Lazear 2009, Menzio &amp; Shi 2011) where long matches reflect productive complementarities that are destroyed by the M&amp;A.</p>
+        </div>
+      </div>
+
+      <div class="key-finding">
+        <div class="kf-icon"></div>
+        <div class="kf-text"><strong>Key finding:</strong> The concentration of losses among long-tenured, high-earning workers is consistent with models where wages rise with tenure (either through contracts or human capital accumulation). M&amp;As provide an opportunity to breach these relationships — and the costs fall on the workers who had invested most in them.</div>
+      </div>
+
+      <div class="stat-row">
+        <div class="stat-card">
+          <div class="stat-value">0%</div>
+          <div class="stat-label">Earnings loss: movers with 4 yrs tenure</div>
+        </div>
+        <div class="stat-card highlight">
+          <div class="stat-value">−4.5%</div>
+          <div class="stat-label">Additional loss: 7+ years tenure</div>
+        </div>
+        <div class="stat-card">
+          <div class="stat-value">−2.7%</div>
+          <div class="stat-label">Earnings loss: bottom earners (Q1)</div>
+        </div>
+        <div class="stat-card highlight">
+          <div class="stat-value">−7.3%</div>
+          <div class="stat-label">Earnings loss: top earners (Q5)</div>
+        </div>
+      </div>
+
+      <div class="figures-grid">
+        <div class="figure-card">
+          <div class="figure-card-header">
+            <span class="figure-label">Figure 6</span>
+            <span class="figure-title">Heterogeneity by Tenure and Earnings Quintile</span>
+          </div>
+          <div class="figure-img-wrap">
+            <!-- <img src="assets/img/fig6.png" alt="Figure 6"> -->
+            <div class="figure-placeholder">
+              <svg class="figure-placeholder-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><rect x="3" y="3" width="18" height="18" rx="2"/><path d="M3 9h18M9 21V9"/></svg>
+              <span>Upload Figure 6 (all panels)</span>
+            </div>
+          </div>
+          <div class="figure-caption">Panel A: log earnings and transition probability by tenure (4 years vs. 7+ years). Panel B: log earnings and transition probability by within-firm earnings quintile (Q1 vs. Q5). Dashed = 95% CIs.</div>
+        </div>
+        <div class="figure-card">
+          <div class="figure-card-header">
+            <span class="figure-label">Table 6</span>
+            <span class="figure-title">Heterogeneity by Tenure &amp; Earnings Distribution</span>
+          </div>
+          <div class="figure-img-wrap">
+            <!-- <img src="assets/img/table6.png" alt="Table 6"> -->
+            <div class="figure-placeholder">
+              <svg class="figure-placeholder-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><rect x="3" y="3" width="18" height="18" rx="2"/><path d="M3 9h18M9 21V9"/></svg>
+              <span>Upload Table 6</span>
+            </div>
+          </div>
+          <div class="figure-caption">Panel A: triple-difference estimates by tenure group. Panel B: by within-firm earnings quintile. Column (1): log earnings. Column (2): transition probability.</div>
+        </div>
+      </div>
+
+      <div class="footnote">* Appendix figures (robustness checks, additional heterogeneity) available in the full paper.</div>
+    </section>
+
+  </main>
+</div>
+
+<script>
+  function setTopic(id) {
+    document.querySelectorAll('.topic-btn').forEach(b => b.classList.remove('active'));
+    document.querySelectorAll('.topic-panel').forEach(p => p.classList.remove('active'));
+    event.currentTarget.classList.add('active');
+    document.getElementById('panel-' + id).classList.add('active');
+    window.scrollTo({ top: 0, behavior: 'smooth' });
+  }
+
+  function setAudience(btn, topic) {
+    const tabs = btn.closest('.audience-tabs').querySelectorAll('.aud-tab');
+    tabs.forEach((t, i) => {
+      t.classList.toggle('active', t === btn);
+    });
+    const idx = Array.from(tabs).indexOf(btn);
+    const labels = ['plain', 'econ'];
+    const panel = document.getElementById('panel-' + topic);
+    panel.querySelectorAll('.explanation-block').forEach((b, i) => {
+      b.classList.toggle('active', i === idx);
+    });
+  }
+</script>
+</body>
+</html>
