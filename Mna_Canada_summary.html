@@ -15,6 +15,8 @@ title: "M&A Paper Summary"
      --cream       : page background
      --sand        : sidebar background
      --text-*      : body text at different emphasis levels
+     --navbar-height: height of the site's fixed top navbar; adjust here
+                      if the header/sidebar overlap with the nav bar
      ===================================================================== */
   :root {
     --navy: #1a2540;
@@ -28,6 +30,7 @@ title: "M&A Paper Summary"
     --text-muted: #8a909e;
     --border: #d8d3cc;
     --white: #ffffff;
+    --navbar-height: 60px;
   }
 
   * { box-sizing: border-box; margin: 0; padding: 0; }
@@ -44,7 +47,7 @@ title: "M&A Paper Summary"
   .page-header {
     background: var(--navy);
     color: #fff;
-    padding: 48px 48px 40px;
+    padding: calc(var(--navbar-height) + 48px) 48px 40px;
   }
 
   .paper-label {
@@ -110,7 +113,7 @@ title: "M&A Paper Summary"
     border-right: 1px solid var(--border);
     padding: 32px 0;
     position: sticky;
-    top: 0;
+    top: var(--navbar-height);  /* sticks just below the fixed nav bar */
     height: fit-content;
   }
 
