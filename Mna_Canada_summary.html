@@ -321,6 +321,9 @@ title: "M&A Paper Summary"
   }
 
   .subfigure-label {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
     font-size: 14px;
     transform: rotate(-90deg);
   }
@@ -587,6 +590,7 @@ title: "M&A Paper Summary"
           </div>
           <div class="figure-img-wrap">
             <!-- TO ADD IMAGE: delete the placeholder div below and uncomment this line -->
+            <!-- <span class="subfigure-label">log(Employment) </span> -->
             <img src="assets/img/MnA_Canada/figure1.jpg" alt="Figure 1: Number of M&A events over time">
             <!-- <div class="figure-placeholder"> -->
               <!-- <svg class="figure-placeholder-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><rect x="3" y="3" width="18" height="18" rx="2"/><path d="M3 9h18M9 21V9"/></svg> -->
@@ -656,19 +660,19 @@ title: "M&A Paper Summary"
             <span class="figure-title">Employment, Payrolls & Profitability </span>
           </div>
           <div class="figure-img-wrap">
-            <span class="subfigure-label">"Employment" </span>
+            <span class="subfigure-label">log(Employment) </span>
             <img src="assets/img/MnA_Canada/figure2_a.jpg" alt="Employment">
           </div>
           <div class="figure-img-wrap">
-            <span class="subfigure-label">"Average Payrolls" </span>
+            <span class="subfigure-label">log(Average Payrolls) </span>
             <img src="assets/img/MnA_Canada/figure2_b.jpg" alt="Average Payrolls">
           </div>
           <div class="figure-img-wrap">
-            <span class="subfigure-label">"Profit Margins" </span>
+            <span class="subfigure-label">Profit Margins </span>
             <img src="assets/img/MnA_Canada/figure2_c.jpg" alt="Profit Margins">
           </div>
           <div class="figure-img-wrap">
-            <span class="subfigure-label">"Return on Assets" </span>
+            <span class="subfigure-label">Return on Assets </span>
             <img src="assets/img/MnA_Canada/figure2_d.jpg" alt="Return on Assets">
           </div>
           <div class="figure-caption">Navy = acquirer, orange = target. Panels (a) log employment, (b) log average payrolls, (c) profit margins, (d) return on assets. Dashed lines = 95% CIs. Event in year 0; normalized to zero at year −1.</div>
