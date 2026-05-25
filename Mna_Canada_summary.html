@@ -331,7 +331,7 @@ title: "M&A Paper Summary"
     display: flex;
     align-items: center;
     justify-content: center;
-    font-size: 10px;
+    font-size: 13.5px;
   }
 
   .figure-title {
@@ -510,7 +510,7 @@ title: "M&A Paper Summary"
     <!-- ── TOPIC PANEL STRUCTURE (same pattern repeated for all 6 topics) ──
          Each panel has:
            1. .topic-header    : eyebrow label, title, one-sentence hook
-           2. .audience-tabs   : "Plain" / "For Economists" toggle
+           2. .audience-tabs   : "Plain" / "Technical" toggle
            3. .explanation-block (×2) : one block per audience tab
            4. .key-finding     : highlighted callout box (optional)
            5. .stat-row        : row of numbered stat cards (optional)
@@ -538,7 +538,7 @@ title: "M&A Paper Summary"
            ─────────────────────────────────────────────────────────────── -->
       <div class="audience-tabs">
         <button class="aud-tab active" onclick="setAudience(this, 'trends')">Plain</button>
-        <button class="aud-tab" onclick="setAudience(this, 'trends')">For Economists</button>
+        <button class="aud-tab" onclick="setAudience(this, 'trends')">Technical</button>
       </div>
 
       <!-- First explanation-block is "active" (visible) by default -->
@@ -549,7 +549,7 @@ title: "M&A Paper Summary"
         </div>
       </div>
 
-      <!-- Second explanation-block is hidden until "For Economists" tab is clicked -->
+      <!-- Second explanation-block is hidden until "Technical" tab is clicked -->
       <div class="explanation-block" id="trends-econ">
         <div class="explanation-text">
           <p>Our sample covers M&A events from the SDC Platinum database matched to the Canadian Employer-Employee Dynamics Database (CEEDD), which links corporate T2 tax records to individual T1 and T4 filings. The match rate is ~75%, yielding ~420 matched deals per year from a pool of ~750 eligible events.</p>
@@ -621,7 +621,7 @@ title: "M&A Paper Summary"
 
       <div class="audience-tabs">
         <button class="aud-tab active" onclick="setAudience(this, 'firms')">Plain</button>
-        <button class="aud-tab" onclick="setAudience(this, 'firms')">For Economists</button>
+        <button class="aud-tab" onclick="setAudience(this, 'firms')">Technical</button>
       </div>
 
       <div class="explanation-block active" id="firms-plain">
@@ -684,7 +684,6 @@ title: "M&A Paper Summary"
             <span class="subfigure-label">Profit Margins</span>
           </div>
           <div class="figure-img-wrap">
-            <span class="subfigure-label">Profit Margins </span>
             <img src="assets/img/MnA_Canada/figure2_c.jpg" alt="Profit Margins">
           </div>
           <div class="subfigure-card-header">
@@ -701,7 +700,7 @@ title: "M&A Paper Summary"
             <span class="figure-title">DiD Estimates on Firm Outcomes</span>
           </div>
           <div class="figure-img-wrap">
-            <!-- <img src="assets/img/table2.png" alt="Table 2"> -->
+            <img src="assets/img/table2.png" alt="Table 2">
             <div class="figure-placeholder">
               <svg class="figure-placeholder-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><rect x="3" y="3" width="18" height="18" rx="2"/><path d="M3 9h18M9 21V9"/></svg>
               <span>Upload Table 2</span>
@@ -722,7 +721,7 @@ title: "M&A Paper Summary"
 
       <div class="audience-tabs">
         <button class="aud-tab active" onclick="setAudience(this, 'workers')">Plain</button>
-        <button class="aud-tab" onclick="setAudience(this, 'workers')">For Economists</button>
+        <button class="aud-tab" onclick="setAudience(this, 'workers')">Technical</button>
       </div>
 
       <div class="explanation-block active" id="workers-plain">
@@ -767,18 +766,23 @@ title: "M&A Paper Summary"
         <div class="figure-card">
           <div class="figure-card-header">
             <span class="figure-label">Figure 3</span>
-            <span class="figure-title">Worker Earnings &amp; Job Transitions After M&As</span>
+            <span class="figure-title">Worker Earnings & Job Transitions After M&As</span>
+          </div>
+          <div class="subfigure-card-header">
+            <span class="subfigure-label">log(Earnings)</span>
           </div>
           <div class="figure-img-wrap">
-            <!-- <img src="assets/img/fig3.png" alt="Figure 3"> -->
-            <div class="figure-placeholder">
-              <svg class="figure-placeholder-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><rect x="3" y="3" width="18" height="18" rx="2"/><path d="M3 9h18M9 21V9"/></svg>
-              <span>Upload Figure 3 (all panels)</span>
-            </div>
+            <img src="assets/img/MnA_Canada/figure3_a.jpg" alt="log(Earnings)">
+          </div>
+          <div class="subfigure-card-header">
+            <span class="subfigure-label">Job Transition</span>
+          </div>
+          <div class="figure-img-wrap">
+            <img src="assets/img/MnA_Canada/figure3_b.jpg" alt="Job Transition">
           </div>
           <div class="figure-caption">Panel (a): log earnings — all target and acquirer workers. Panel (b): job transition probability. Panel (c): log earnings restricted to stayers only. Navy = acquirer workers, orange = target workers.</div>
         </div>
-        <div class="figure-card">
+        <!-- <div class="figure-card">
           <div class="figure-card-header">
             <span class="figure-label">Table 3</span>
             <span class="figure-title">DiD Estimates on Worker Outcomes</span>
@@ -791,7 +795,7 @@ title: "M&A Paper Summary"
             </div>
           </div>
           <div class="figure-caption">Column (1): log earnings. Column (2): job transition probability. Column (3): log earnings for stayers only. Two-way clustered standard errors (worker × firm).</div>
-        </div>
+        </div> -->
       </div>
     </section>
 
@@ -805,7 +809,7 @@ title: "M&A Paper Summary"
 
       <div class="audience-tabs">
         <button class="aud-tab active" onclick="setAudience(this, 'movers')">Plain</button>
-        <button class="aud-tab" onclick="setAudience(this, 'movers')">For Economists</button>
+        <button class="aud-tab" onclick="setAudience(this, 'movers')">Technical</button>
       </div>
 
       <div class="explanation-block active" id="movers-plain">
@@ -888,7 +892,7 @@ title: "M&A Paper Summary"
 
       <div class="audience-tabs">
         <button class="aud-tab active" onclick="setAudience(this, 'destinations')">Plain</button>
-        <button class="aud-tab" onclick="setAudience(this, 'destinations')">For Economists</button>
+        <button class="aud-tab" onclick="setAudience(this, 'destinations')">Technical</button>
       </div>
 
       <div class="explanation-block active" id="destinations-plain">
@@ -971,7 +975,7 @@ title: "M&A Paper Summary"
 
       <div class="audience-tabs">
         <button class="aud-tab active" onclick="setAudience(this, 'heterogeneity')">Plain</button>
-        <button class="aud-tab" onclick="setAudience(this, 'heterogeneity')">For Economists</button>
+        <button class="aud-tab" onclick="setAudience(this, 'heterogeneity')">Technical</button>
       </div>
 
       <div class="explanation-block active" id="heterogeneity-plain">
@@ -1064,7 +1068,7 @@ title: "M&A Paper Summary"
   }
 
   /* setAudience(btn, topic)
-     Called by the Plain / For Economists tabs within a panel.
+     Called by the Plain / Technical tabs within a panel.
      Toggles which .explanation-block is shown inside that panel.
      The tab order matches the block order: tab 0 → block 0, tab 1 → block 1.
      To add a third audience tab, add a third <button class="aud-tab"> and
